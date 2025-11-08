@@ -1,0 +1,58 @@
+:root {
+  --color-primary: #007bff;
+  --color-bg: #f4f4f4;
+  --color-text: #222;
+  --color-card: #ffffff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  height: 100%;
+}
+
+main {
+  padding: 1rem;
+  padding-bottom: 70px; /* espacio para el menú inferior */
+}
+
+nav.c-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-card);
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+nav.c-menu a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav.c-menu a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
