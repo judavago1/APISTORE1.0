@@ -24,10 +24,16 @@ export default function Page() {
   );
 
   return (
-    <div style={{ backgroundColor: "#f8f9fa", minHeight: "100vh" }}>
+    <div
+      style={{
+        backgroundColor: "#f8f9fa",
+        minHeight: "100vh",
+        width: "100%",
+        overflowX: "hidden", // Evita que se desborde horizontalmente
+      }}
+    >
       <Header titulo="Catálogo" />
 
-      {/* Espacio para que el contenido no quede tapado por el header */}
       <div style={{ height: "100px" }}></div>
 
       {/* Filtros */}
@@ -35,6 +41,9 @@ export default function Page() {
         style={{
           textAlign: "center",
           marginBottom: "20px",
+          padding: "0 10px",
+          boxSizing: "border-box",
+          width: "100%",
         }}
       >
         <select
@@ -45,7 +54,8 @@ export default function Page() {
             borderRadius: "20px",
             border: "2px solid #007bff",
             marginBottom: "10px",
-            width: "250px",
+            width: "90%", // 🔹 Se adapta al ancho de la pantalla
+            maxWidth: "250px",
             fontSize: "16px",
             textAlign: "center",
           }}
@@ -66,7 +76,8 @@ export default function Page() {
             padding: "10px",
             borderRadius: "20px",
             border: "2px solid #007bff",
-            width: "400px",
+            width: "90%", // 🔹 Cambiado de 400px a 90% del ancho
+            maxWidth: "400px",
             fontSize: "16px",
             textAlign: "center",
           }}
@@ -80,7 +91,9 @@ export default function Page() {
           flexWrap: "wrap",
           justifyContent: "center",
           gap: "20px",
-          padding: "20px",
+          padding: "10px",
+          boxSizing: "border-box",
+          width: "100%",
         }}
       >
         {productosFiltrados.map((p) => (
@@ -90,13 +103,14 @@ export default function Page() {
               backgroundColor: "white",
               borderRadius: "15px",
               padding: "15px",
-              width: "190px",
+              width: "180px",
               textAlign: "center",
               boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
               transition: "transform 0.2s ease",
+              boxSizing: "border-box",
             }}
           >
             <img
@@ -141,8 +155,12 @@ export default function Page() {
                 fontWeight: "bold",
                 transition: "background-color 0.3s",
               }}
-              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#0056b3")}
-              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#007bff")}
+              onMouseOver={(e) =>
+                (e.currentTarget.style.backgroundColor = "#0056b3")
+              }
+              onMouseOut={(e) =>
+                (e.currentTarget.style.backgroundColor = "#007bff")
+              }
             >
               Agregar
             </button>
